@@ -21,7 +21,53 @@
 
     </header>
     <main>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Add item</b></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- what appears in the modal as a form -->
+        <div class="modal-body">
+          <p><b>Title :</b><input type="text" class="title" ></p>
+          <p><b>Price :</b><input type="text" class="price"></p>
+          <p><b>Description :</b><input type="text" class="description"></p>
+          <p><b>Image :</b><input type="text" class="image"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="addProduct()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- TABLE -->
+  <div class="container-fluid">
+    <table>
+        <tr>
+        <th class="td">Product</th>
+        <th class="td">Price</th>
+        <th class="td">Description</th>
+        <th class="td">Image</th>
+        <th class="td">edit</i></th> 
+        <th class="td">delete</th> 
+        </tr>
+        <tbody>
+            <tr class="table_row">
+                
+            </tr>
+        </tbody>
+      </table>
+  </div>
+  
     </main>
     <footer>
         
