@@ -29,12 +29,10 @@ table{
  .td{
     padding: 10px;
     border-bottom: var(---border);
-    border-top:var(---border) ;
  }
 .td img{
     width: 100px;
     height: 100px;
-    /* border: var(---border); */
 }
 
 /* ICON */
@@ -42,3 +40,69 @@ i{
     font-size: 30px;
 }
 
+/*  NAVBAR*/
+.nav-item a{
+    font-weight: 900;
+    color: var(---text_color);
+    font-size: 20px;
+}
+.navbar{
+    background-color: var(---main_color);
+}
+ 
+/**************************/
+
+/* BANNER */
+.banner{
+    background-image: url('https://i.postimg.cc/0NjH06Nf/banner-image.jpg');
+    height: 90vh;
+    background-attachment: fixed;
+}
+
+/* PRODUCTS */
+.divider h1{
+    text-align: center;
+    color: var(---text_color);
+    background-color: var(---main_color);
+    padding: 20px;
+    font-weight: 900;
+}
+
+#product{
+    background-color: var(---alternative_color);
+}
+
+.navbar-brand img{
+    width: 100px;
+    height: 100px;
+}
+
+.btn{
+    float: right;
+    background-color:var(---main_color);
+    padding: 20px;
+    color: var(---text_color);
+}
+
+
+footer{
+    text-align: center;
+    font-weight: 900;
+    color: var(---text_color);
+    background-color: var(---main_color);
+    padding: 20px;
+}
+
+.container-fluid input{
+    padding: 10px;
+    margin: 6px;
+}
+
+ button{
+    background-color: var(---alternative_color);
+    color: black;
+    font-weight: 900;
+    width: 30%;
+    border: var(---border);
+    margin: 4px;
+ }
