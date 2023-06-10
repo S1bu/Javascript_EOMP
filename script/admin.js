@@ -12,7 +12,7 @@ function display(){
     JSON.parse(localStorage.getItem('id'))
      list.forEach(display => {
         output.innerHTML+=`
-                <td class="td">${display.id}</td>
+                <td class="td" >${display.id}</td>
                 <td class="td">${display.title}</td>
                 <td class="td">R ${display.price}</td>
                 <td class="td">${display.description}</td>
