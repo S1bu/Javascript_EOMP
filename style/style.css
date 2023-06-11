@@ -15,7 +15,6 @@
 table{
     width: 100%;
     text-align: center;
- 
 } 
  
 .table_row{
@@ -133,9 +132,16 @@ footer{
 .container_output{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .card-img-top{
     height: 60vh;
 }
+ .col{
+    margin: 3px;
+    animation:backInRight; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s; /* don't forget to set a duration! */
+ }
+ 
+ 
