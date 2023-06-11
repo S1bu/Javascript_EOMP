@@ -18,7 +18,7 @@ function display(){
                 <td class="td">${display.description}</td>
                 <td class="td"><img src="${display.image}"></td>
                 <td class="td"><i class="bi bi-pencil"></i></td> <!---edit product-->
-                <td class="td"><i class="bi bi-trash"></i></td> <!---delete product-->
+                <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
            
         `
      });
@@ -26,6 +26,7 @@ function display(){
      
 }
  document.onload = display(); 
+
  
 
 // ADD PRODUCTS
@@ -45,4 +46,16 @@ function addProduct(){
     localStorage.setItem('id',JSON.stringify(list) )
  
 location.reload(); //reloads the page
+}
+
+
+//REMOVE PRODUCT
+function removeBtn() {
+   let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
+    let index = list.length - (list.length - idDel);    //calculating the index
+    list.splice( index, 1) //delete
+    // localStorage.setItem('id',JSON.stringify(list) )
+ console.log(list)
+// store list on local storage 
+// location.reload(); //reloads the page
 }
