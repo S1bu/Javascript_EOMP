@@ -168,10 +168,13 @@ form .btn-danger{
 
 
 .container_output{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
+.container_output2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 
 .card-img-top{
     height: 60vh;
@@ -182,7 +185,16 @@ form .btn-danger{
     animation-duration: 3s; /* don't forget to set a duration! */
  }
  
- 
+.add_TO_CART{
+    background-color:var(---main_color);
+     color: white;
+     font-weight: 900;
+     width: 40%;
+     border: 1px solid #3F3D3D;
+     border-radius: 2px;
+     margin: 4px;
+     padding:10px;
+}
 /***************************************************/
 /****************FOOTER SECTION*******************/
 /***************************************************/
@@ -194,4 +206,10 @@ footer{
     padding: 20px;
     position: relative;
     bottom: 0;
+}
+
+
+.card{
+    margin: 3px;
+    text-align: center;
 }
