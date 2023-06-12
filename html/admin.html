@@ -39,6 +39,41 @@
           <li class="nav-item">
             <a class="nav-link" href="../html/chekout.html">Checkout</a>
           </li> 
+          <li class="nav-item">
+            <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
+            </li>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Contact us</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form  action="https://formspree.io/f/mpzebbdr"
+    method="POST">
+      <!-- first name input  -->
+      <input type="text" placeholder="firstname" name="firatname" required>
+      
+      <!-- last name input  -->
+      <input type="text" placeholder="lastname" name="lastname" required>
+
+       <!-- email input  -->
+       <input type="email" placeholder="Shoe@gmail.com" name="email" required>
+
+       <!-- message input  -->
+       <input type="text" placeholder="Message..." name="message" required>
+    
+   
+       <div class="modal-footer">
+        <button type="button" class="btn btn-danger cancel" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn submit" >Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
         </ul>
       </div>
     </div>
