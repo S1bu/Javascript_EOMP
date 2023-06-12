@@ -11,6 +11,7 @@
     ---radius:3px;
     ---border:1px solid black;
 }
+ 
 /*-------TABLE------------*/
 table{
     width: 100%;
@@ -77,14 +78,37 @@ input{
     background-color: var(---alternative_color);
     color: var(---main_color);
 }
-/********************INDEX PAGE********************************************
-/
+/********************INDEX PAGE********************************************/
+/***** CONTACT****/
+form input{
+    padding: 20px;
+    margin: 4px;
+}
 
+form .submit{
+    background-color: var(---main_color);
+    color: var(---alternative_color);
+    font-weight: 800;
+}
+/* submit when hover */
+form .submit:hover{
+    background-color: var(---alternative_color);
+    color: var(---main_color);
+    font-weight: 800;
+}
+
+/* close */
+form .btn-danger{
+    font-weight: 800;
+}
+
+/*******************/
 /* BANNER */
 .banner{
     background-image: url('https://i.postimg.cc/0NjH06Nf/banner-image.jpg');
     height: 90vh;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 /* PRODUCTS */
