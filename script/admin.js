@@ -20,11 +20,10 @@ function display(){
                 aspect-ratio: 3/3;"></td>
                 <td class="td"><button>edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
-           
         `
      });
    
-     
+     list.sort()
 }
  document.onload = display(); 
 
@@ -53,33 +52,15 @@ location.reload(); //reloads the page
 //REMOVE PRODUCT
 function removeBtn() {
    let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
-    // let index = list.length - (list.length - idDel);    //calculating the index
-    list.splice( index, 1) //delete
-    // localStorage.setItem('id',JSON.stringify(list) )
- console.log(list)
-// store list on local storage 
-// location.reload(); //reloads the page
+ 
+const index = list.findindex(item.id === idDel);
+list.splice(index , 1)
+console.log(list)
 }
 
  
 
-
-// DELETE FROM CRUD --CHATGPT
-
-// Example of a simple CRUD system with an array as the data store
-// let dataStore = [];
-
-// // Delete operation
-// function deleteData(identifier) {
-//   const index = dataStore.findIndex(item => item.id === identifier);
-  
-//   if (index !== -1) {
-//     dataStore.splice(index, 1);
-//     console.log("Data deleted successfully!");
-//   } else {
-//     console.log("Data not found!");
-//   }
-// }
+ 
 
 // // Usage example
 // deleteData("123"); // Delete data with identifier "123"
