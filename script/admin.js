@@ -17,7 +17,7 @@ function display(){
                 <td class="td">R ${display.price}</td>
                 <td class="td">${display.description}</td>
                 <td class="td"><img src="${display.image}"></td>
-                <td class="td"><i class="bi bi-pencil"></i></td> <!---edit product-->
+                <td class="td"><button>edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
            
         `
