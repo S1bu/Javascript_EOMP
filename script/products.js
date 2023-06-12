@@ -12,7 +12,12 @@ let displayProducts =[
     {
         image:'https://i.postimg.cc/XYGw6JW2/shoe6.jpg',
     },
-   
+    {
+      image:'https://i.postimg.cc/BQ5t51Fp/nike-air-something.jpg',
+  },
+  {
+      image:'https://i.postimg.cc/JhzSY6pj/shoe5.jpg',
+  },
 ]
 
 // The default products

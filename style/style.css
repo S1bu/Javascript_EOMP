@@ -169,11 +169,11 @@ form .btn-danger{
 
 .container_output{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
 }
 .container_output2{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
   }
 
 .card-img-top{
