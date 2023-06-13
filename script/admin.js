@@ -52,13 +52,16 @@ location.reload(); //reloads the page
 //REMOVE PRODUCT
 function removeBtn() {
    let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
- let index = list.find(function(locate){
+ let target = list.find(function(locate){
     return locate.id == idDel;
  })
+
+ let index = list.indexOf(target)
  console.log(index)
-list.splice(index,1)
-console.log(list)
-localStorage.setItem('id',JSON.stringify(list) )
+list.splice(index,1) //splicing the targeted index
+console.log(list) //show me my list
+localStorage.setItem('id',JSON.stringify(list) ) //send to storage
+location.reload(); //reloads the page
 }
 
 // //  EDIT button
