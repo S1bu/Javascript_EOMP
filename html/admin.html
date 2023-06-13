@@ -83,12 +83,12 @@
 <button  class="btn" style="float: right;
 background-color:var(---main_color);
 padding: 20px;
-color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target="#addItem">
    Add Product
   </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -103,8 +103,8 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
           <p><b>Image :</b><input type="text" class="image" placeholder="URL('')"></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn" class="cancel" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn" class="save"  onclick="addProduct()">Save changes</button>
+          <button type="button" class="btn btn-danger" style="font-weight: 900;" class="cancel" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn"style="background-color:#3F3D3D;font-weight:900;color:white" onclick="addProduct()">Save changes</button>
         </div>
       </div>
     </div>
@@ -127,8 +127,37 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
         </tbody>
       </table>
   </div>
+  <!-- hidden form -->
+   
+
+<!-- Modal -->
+<div class="modal fade" id="editTarget" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- edit title -->
+      <input type="text" class="title">
+        <!-- edit title -->
+        <input type="text" class="Description">
+          <!-- edit title -->
+      <input type="text" class="price">
+        <!-- edit title -->
+        <input type="text" class="image">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   
     </main>
+     
     <footer>
       <p>@Copy right Sibusiso Dyan | 2023</p>
   </footer>

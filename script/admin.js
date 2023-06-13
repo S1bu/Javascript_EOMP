@@ -18,7 +18,7 @@ function display(){
                 <td class="td">${display.description}</td>
                 <td class="td"><img src="${display.image}"style=" object-fit:contain;
                 aspect-ratio: 3/3;"></td>
-                <td class="td"><button>edit</button></td> <!---edit product-->
+                <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget">edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
         `
      });
