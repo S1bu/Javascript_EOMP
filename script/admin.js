@@ -18,7 +18,7 @@ function display(){
                 <td class="td">${display.description}</td>
                 <td class="td"><img src="${display.image}"style=" object-fit:contain;
                 aspect-ratio: 3/3;"></td>
-                <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget">edit</button></td> <!---edit product-->
+                <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget" onclick="edit()">edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
         `
      });
@@ -52,21 +52,32 @@ location.reload(); //reloads the page
 //REMOVE PRODUCT
 function removeBtn() {
    let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
- 
-const index = list.findindex(item.id === idDel);
-list.splice(index , 1)
+ let index = list.find(function(locate){
+    return locate.id == idDel;
+ })
+ console.log(index)
+list.splice(index,1)
 console.log(list)
+localStorage.setItem('id',JSON.stringify(list) )
 }
 
- 
+// //  EDIT button
+// function edit(){
+//     function EditProduct(item) {
+//         this.id = document.querySelector(`.id-${item.id}`).value  //get the id data from local storage
+//         this.name = document.querySelector(`.title-${item.id}`).value //get the title data from local storage
+//         this.price = document.querySelector(`.price-${item.id}`).value //get the price from local storage
+//         this.image = document.querySelector(`.image-${item.id}`).value //get the id data from local storage
+//         // findin the index
+//         let index = displayContent.findIndex( p=>{
+//           return p.id === item.id
+//         })
+//         console.log(item.id, index);
+//         newContent[index] = Object.assign({}, this)
+//         localStorage.setItem("list", JSON.stringify(newContent)); //sending to storage
+//         // location.reload()
+//       }
+// }
 
- 
 
-// // Usage example
-// deleteData("123"); // Delete data with identifier "123"
- 
   
-//   console.log(firstExample)//display full data again
-
-
- 
