@@ -69,13 +69,12 @@ function total(){
   // console.log(newTarget);
   totalList.push(parseInt(newTarget.price)) 
 
-  
-
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
   let sum = 0;
+  //the calculation
   totalList.forEach(n=> sum += n)
-
+//output
   totalOutcome.innerHTML=`
   Total = ${sum}
   `
@@ -83,8 +82,11 @@ function total(){
 } 
 
 function clearlIST(){
-  localStorage.removeItem(totalList);
-  localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
+  // localStorage.removeItem()
+//  localStorage.removeItem('calculation')
+//  localStorage.clear('calculation')
+let totalList=[]
+  localStorage.setItem('calculation',JSON.stringify(totalList)) //send to storage
   location.reload(); //reloads the page
 }
  
