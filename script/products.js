@@ -4,6 +4,7 @@ let totalOutcome = document.querySelector('.total') //targeting total amount out
 let cartStuff = document.querySelector('.cart-item') //targeting cart output
 let list = JSON.parse(localStorage.getItem('id')) ? JSON.parse(localStorage.getItem('id')) : [];
 let totalList = JSON.parse(localStorage.getItem('calculation')) ? JSON.parse(localStorage.getItem('calculation')) : [];
+let cartList = [];
 // list of default products
 let displayProducts =[
     {
@@ -55,22 +56,23 @@ aspect-ratio: 3/2;">
   ` 
 });
  
-// let totalList = [];
-
 // cALCULATION OF TOTAL PRICE
 function total(){
+ 
   let idAdd = parseInt(prompt('Please confirm'));  //input id
   let  = newTarget= list.find(function(locate){
      return locate.id == idAdd;
   })
-  let index = list.indexOf(newTarget).price
-  // totalList.push(index)
 
-  // console.log(newTarget);
-  totalList.push(parseInt(newTarget.price)) 
+ 
+  let index = list.indexOf(newTarget).price 
+  // totalList.push(index)
+  
+  totalList.push(parseInt(newTarget.price))  //pushing the prices
 
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
+ 
   let sum = 0;
   //the calculation
   totalList.forEach(n=> sum += n)
@@ -78,15 +80,55 @@ function total(){
   totalOutcome.innerHTML=`
   Total = ${sum}
   `
-  
-} 
+  console.log(totalList);
+//-----------------------------------------------
+//-----------------------------------------------
+//-----------------------------------------------
+ 
+  //-----display cart
+  cartList.push(newTarget)  //pushing the cart details cartList
+  localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
+  console.log(cartList)
+  cartList.forEach(element => {
+    cartStuff.innerHTML+=`
+    <div class="container text-center" class="checkout">
+  <div class="row align-items-center">
+  <div class="col">
+  ${element.id}
+</div>
+    <div class="col">
+    <img src=" ${element.image}" alt="" width="60px" height="60px">
+    </div>
+    <div class="col">
+       ${element.description}
+    </div>
+    <div class="col">
+    ${element.price}
+    </div>
+    
+    </div>
+  </div>
+  </div>
+    `
+  });
 
+} 
+ 
+// CLEAR THE TOTAL LIST
 function clearlIST(){
-  // localStorage.removeItem()
-//  localStorage.removeItem('calculation')
-//  localStorage.clear('calculation')
 let totalList=[]
+let cartList =[]
   localStorage.setItem('calculation',JSON.stringify(totalList)) //send to storage
+  localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
   location.reload(); //reloads the page
+// checkoutItems()
 }
  
+// // Checkout item
+// function checkoutItems(){
+//   let index2 = list.indexOf(newTarget)
+//   cartList.push(index)  //pushing the cart details cartList
+//   localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
+// //  cart-item
+// console.log(cartList);
+// }

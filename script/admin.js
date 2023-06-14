@@ -23,7 +23,6 @@ function display(){
         `
      });
    
-     list.sort()
 }
  document.onload = display(); 
 
@@ -65,3 +64,10 @@ location.reload(); //reloads the page
 }
 
 
+function editItem(object){
+    this.id=object.id //gets the id
+    this.name=document.querySelector('#edit').value, //gets the new value from edit modal
+    array[index]=Object.assign({},this) //assigning
+    functiondisplay()
+}
+//in edit button of modal onclick='new editItem ()'
