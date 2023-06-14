@@ -64,23 +64,4 @@ localStorage.setItem('id',JSON.stringify(list) ) //send to storage
 location.reload(); //reloads the page
 }
 
-// //  EDIT button
-// function edit(){
-//     function EditProduct(item) {
-//         this.id = document.querySelector(`.id-${item.id}`).value  //get the id data from local storage
-//         this.name = document.querySelector(`.title-${item.id}`).value //get the title data from local storage
-//         this.price = document.querySelector(`.price-${item.id}`).value //get the price from local storage
-//         this.image = document.querySelector(`.image-${item.id}`).value //get the id data from local storage
-//         // findin the index
-//         let index = displayContent.findIndex( p=>{
-//           return p.id === item.id
-//         })
-//         console.log(item.id, index);
-//         newContent[index] = Object.assign({}, this)
-//         localStorage.setItem("list", JSON.stringify(newContent)); //sending to storage
-//         // location.reload()
-//       }
-// }
 
-
-  

@@ -43,11 +43,40 @@
                 <a class="nav-link" href="./html/admin.html">Admin</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="./html/chekout.html">Checkout</a>
+                <a class="nav-link" href="./html/chekout.html" data-bs-toggle="modal" data-bs-target="#checkout">Checkout</a>
               </li> 
+              <!-- Modal checkout-->
+                <div class="modal fade" id="checkout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Checkout</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- CHECKOUT CONTENT -->
+                        <div class="cart-item">
+
+                        </div>
+
+                        <div class="total">
+
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                       
+                        <button type="button" class="btn btn-danger" onclick=" clearlIST()">Clear list</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <li class="nav-item">
                 <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#contact">Contact</a>
                 </li>
+                <!-- CONTACT MODAL -->
                   <div class="modal fade" id="contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
@@ -127,10 +156,5 @@
      crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
 
 
