@@ -41,12 +41,21 @@ table{
     height: 100px;
 }
 
-/*NAVBAR*/
+/*****************************************/
+/****************nav bar*****************/
+/*****************************************/
+/* nav img/logo */
+.navbar-brand img{
+    width: 60px;
+    height: 60px;
+}
+/* links */
 .nav-item a{
     font-weight: 900;
     color: var(---text_color);
     font-size: 20px;
 }
+/* nav bar */
 .navbar{
     background-color: var(---main_color);
 }
@@ -59,8 +68,10 @@ button{
     border: var(---border);
     margin: 4px;
  }
- 
-
+ /*****************************************/
+/****************MODAL*****************/
+/*****************************************/
+/* input */
 input{
     width: 100%;
     border-radius: var(---radius);
@@ -84,6 +95,7 @@ input{
 /********************************/
 /************* CONTACT**********/
 /********************************/
+/* input */
 form input{
     padding: 20px;
     margin: 4px;
@@ -106,6 +118,7 @@ form .btn-danger{
     font-weight: 800;
 }
 
+
 /*******************/
 /******BANNER******/
 /*******************/
@@ -119,7 +132,7 @@ form .btn-danger{
 .banner h1{
     font-weight: 900;
     color: white;
-    font-size: 100px;
+    font-size: 80px;
     position: absolute;
     top: 50%;
     animation:backInDown; /* referring directly to the animation's @keyframe declaration */
@@ -148,10 +161,6 @@ form .btn-danger{
     background-color: var(---alternative_color);
 }
 
-.navbar-brand img{
-    width: 100px;
-    height: 100px;
-}
 
 .btn{
     float: right;
@@ -223,3 +232,59 @@ padding: 10px;
 margin: 4px;
 border-radius: 2px;
 }
+
+
+
+/***************************************************/
+/****************Responsiveness*******************/
+/***************************************************/
+
+/* SMALL PHONE */
+/* Mobile */
+@media only screen and (max-width: 600px){
+   /********************************/
+   /**********BANNER****************/
+   /**********************************/
+    .banner{
+        background-size: contain;
+        height: 20vh;
+        background-repeat: no-repeat;
+    }
+    .banner h1{
+        padding: 40px;
+        font-size: 30px;
+        position: relative;
+    }
+    /**********************************/
+    /************PRODUCTS************/
+    /**********************************/
+    .container_output{
+        grid-template-columns: auto auto;
+      }
+      .container_output2{
+          grid-template-columns: auto auto;
+        }
+}
+/*NORMAL PHONE*/
+@media only screen and (max-width: 600px){
+    /********************************/
+    /**********BANNER****************/
+    /**********************************/
+     .banner{
+         background-size: contain;
+         height: 15vh;
+         background-repeat: no-repeat;
+     }
+     .banner h1{
+      visibility: hidden;
+     }
+     /**********************************/
+     /************PRODUCTS************/
+     /**********************************/
+     .container_output{
+         grid-template-columns: auto auto;
+       }
+       .container_output2{
+           grid-template-columns: auto auto;
+         }
+ }
