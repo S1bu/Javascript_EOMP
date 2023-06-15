@@ -13,7 +13,7 @@ function display(){
     JSON.parse(localStorage.getItem('id'))
      list.forEach(display => {
         output.innerHTML+=`
-         
+                <tr>
                 <td class="td" >${display.id}</td>
                 <td class="td" class="product" >${display.brand}</td>
                 <td class="td">${display.title}</td>
@@ -23,7 +23,7 @@ function display(){
                 aspect-ratio: 3/2;"></td>
                 <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget" onclick="edit()">edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
-       
+                </tr>
         `
      });
    
