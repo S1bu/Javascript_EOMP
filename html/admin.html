@@ -125,15 +125,17 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
           </div>
           <!-- what appears in the modal as a form -->
           <div class="modal-body">
-            <p><b>Title :</b><input type="text" class="title" placeholder="Product name"></p>
-            <p><b>Brand :</b><input type="text" class="brand" placeholder="Brand name"></p>
-            <p><b>Price :</b><input type="text" class="price" placeholder="R 0,00"></p>
-            <p><b>Description :</b><input type="text" class="description" placeholder="Describe condition..."></p>
-            <p><b>Image :</b><input type="text" class="image" placeholder="URL('')"></p>
+            <form >
+              <label><b>Title :</b><input type="text" class="title" placeholder="Product name" required></label>
+              <label><b>Brand :</b><input type="text" class="brand" placeholder="Brand name" required></label>
+              <label><b>Price :</b><input type="text" class="price" placeholder="R 0,00" required></label>
+              <label><b>Description :</b><input type="text" class="description" placeholder="Describe condition..." required></label>
+              <label><b>Image :</b><input type="text" class="image" placeholder="URL('')" required></label>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" style="font-weight: 900;" class="cancel" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn"style="background-color:#3F3D3D;font-weight:900;color:white"  id="add_item">add item</button>
+            <button type="submit" class="btn"style="background-color:#3F3D3D;font-weight:900;color:white"  id="add_item">add item</button>
           </div>
         </div>
       </div>

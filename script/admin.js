@@ -56,20 +56,31 @@ function addProduct(){
 //-------------------------
 //FUNCTION FOR REMOVE ITEM
 //-------------------------
-
+ 
 let delete_admin_product = document.querySelector("#delete_admin").addEventListener("click", removeBtn )
 function removeBtn() { //REMOVE PRODUCT FUNCITON
-   let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
- let target = list.find(function(locate){
-    return locate.id == idDel;
- })
 
- let index = list.indexOf(target)
- console.log(index)
-list.splice(index,1) //splicing the targeted index
-console.log(list) //show me my list
-localStorage.setItem('id',JSON.stringify(list) ) //send to storage
-location.reload(); //reloads the page
+ 
+    let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
+
+ 
+if(idDel === ''){
+
+alert('Please insert id of item you wish to remove')
+
+}
+else{
+   
+    let target = list.find(function(locate){
+        return locate.id == idDel;
+     })
+     
+    let index = list.indexOf(target)
+    list.splice(index,1) //splicing the targeted index
+    localStorage.setItem('id',JSON.stringify(list) ) //send to storage
+    location.reload(); //reloads the page
+}
+
 }
 
 //-------------------------
