@@ -50,7 +50,7 @@ aspect-ratio: 3/2;">
   <h5 class="card-title">${run.title}</h5>
   <p class="card-text">${run.description}</p>
   <p class="card-text"><b>R${run.price}</b><p>
-  <button class="add_TO_CART" onclick="total()">add to cart</button>
+  <button type="button" class="add_TO_CART" id="totalCalculate" onclick="total()">add to cart</button>
 </div>
 </div>
   ` 
@@ -59,9 +59,10 @@ aspect-ratio: 3/2;">
 //---------------------------------------
 //FUNCTION FOR cALCULATION OF TOTAL PRICE
 //---------------------------------------
+ 
 function total(){
  
-  let idAdd = parseInt(prompt('Please confirm'));  //input id
+  let idAdd = parseInt(prompt('insert product number'));  //input id
   let  = newTarget= list.find(function(locate){
      return locate.id == idAdd;
   })
@@ -75,13 +76,7 @@ function total(){
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
   
-//   let sum = 0;
-//   //the calculation
-//   totalList.forEach(n=> sum += n)
-// //output
  
- 
-  // ---------
   let sumOfArray = totalList.reduce(function (a, b) {
     return a + b;
   }, 0);
@@ -91,14 +86,17 @@ function total(){
    totalOutcome.innerHTML=`
   Total = ${sumOfArray}
   `
+  alert('Item added')
 }
-//----------------------------------------------- 
+
+//---------------------------------------
+//FUNCTION FOR DISPLAYING THE TOTAL VALUE
+//---------------------------------------
 function totalDisplay() {
   let sumOfArray = totalList.reduce(function (a, b) {
     return a + b;
   }, 0);
   console.log(sumOfArray); // Output: 100
-  // console.log(totalList);
 
    totalOutcome.innerHTML=`
   Total = ${sumOfArray}
@@ -106,54 +104,41 @@ function totalDisplay() {
 }
 totalDisplay()
  
-//---------------------------------------
-//FUNCTION FOR DISPLAYING THE TOTAL VALUE
-//---------------------------------------
+//----------------------------------------------- 
  
- 
-// document.onload = displayTotal();
-
-
-
 //---------------------------------
 //FUNCTION TO  CLEAR THE TOTAL LIST
 //-----------------------------------
 let clear_list = document.querySelector('#clear_list').addEventListener('click',clearlIST)
 
 function clearlIST(){
-let totalList=[]
-let cartList =[]
+let totalList=[] //empty the totallist
+let cartList =[] //empty the cartList
   localStorage.setItem('calculation',JSON.stringify(totalList)) //send to storage
   localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
   location.reload(); //reloads the page
  
 }
 //---------------------------------------
-// // Checkout item
-// function checkoutItems(){
-//   let index2 = list.indexOf(newTarget)
-//   cartList.push(index)  //pushing the cart details cartList
-//   localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
-// //  cart-item
-// console.log(cartList);
-// }
 
-//FILTER PRODUCTS
-// document.querySelector('.input').addEventListener('input',filterList);
+//--------------------------
+// FILTER PRODUCTS FUNCTION
+//--------------------------
+let input = document.querySelector('.input').addEventListener('input',filterList);
 
-// function filterList() {
-//     const searchInput = document.querySelector('.input'); //takes the input     <------input
-//     const filter = searchInput.value.toLowerCase();  //change the input value to lowercase  ---((process))----
-//     const products_output2  = document.querySelectorAll('.product'); //targets the output class ------>ouput
+function filterList() {
+    const searchInput = document.querySelector('.input'); //takes the input     <------input
+    const filter = searchInput.value.toLowerCase();  //change the input value to lowercase  ---((process))----
+    const products_output2  = document.querySelectorAll('.product'); //targets the output class ------>ouput
 
-//    products_output2.forEach((item) =>{
-//         let text = item.textContent;
+   products_output2.forEach((item) =>{
+        let text = item.textContent;
 
-//         if(text.toLowerCase().includes(filter.toLowerCase())){
-//             item.style.display = '';
-//         }
-//         else{
-//             item.style.display = 'none';
-//         }
-//     });
-// }
+        if(text.toLowerCase().includes(filter.toLowerCase())){
+            item.style.display = '';
+        }
+        else{
+            item.style.display = 'none';  //removes the display
+        }
+    });
+}
