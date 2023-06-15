@@ -74,38 +74,61 @@ function total(){
 
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
+  
+//   let sum = 0;
+//   //the calculation
+//   totalList.forEach(n=> sum += n)
+// //output
+ 
+ 
+  // ---------
+  let sumOfArray = totalList.reduce(function (a, b) {
+    return a + b;
+  }, 0);
+  console.log(sumOfArray); // Output: 100
+  // console.log(totalList);
+
+   totalOutcome.innerHTML=`
+  Total = ${sumOfArray}
+  `
 }
 //----------------------------------------------- 
+function totalDisplay() {
+  let sumOfArray = totalList.reduce(function (a, b) {
+    return a + b;
+  }, 0);
+  console.log(sumOfArray); // Output: 100
+  // console.log(totalList);
 
+   totalOutcome.innerHTML=`
+  Total = ${sumOfArray}
+  `
+}
+totalDisplay()
  
 //---------------------------------------
 //FUNCTION FOR DISPLAYING THE TOTAL VALUE
 //---------------------------------------
-function displayTotal() {
-  let sum = 0;
-  //the calculation
-  totalList.forEach(n=> sum += n)
-//output
  
-  totalOutcome.innerHTML=`
-  Total = ${sum}
-  `
-  
-  console.log(totalList);
-}
-document.onload = displayTotal();
+ 
+// document.onload = displayTotal();
 
+
+
+//---------------------------------
+//FUNCTION TO  CLEAR THE TOTAL LIST
+//-----------------------------------
 let clear_list = document.querySelector('#clear_list').addEventListener('click',clearlIST)
-// CLEAR THE TOTAL LIST
+
 function clearlIST(){
 let totalList=[]
 let cartList =[]
   localStorage.setItem('calculation',JSON.stringify(totalList)) //send to storage
   localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
   location.reload(); //reloads the page
-// checkoutItems()
-}
  
+}
+//---------------------------------------
 // // Checkout item
 // function checkoutItems(){
 //   let index2 = list.indexOf(newTarget)
