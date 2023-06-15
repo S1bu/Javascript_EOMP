@@ -88,20 +88,19 @@ else{
 //-------------------------
 
 let edit_admin = document.querySelector('#edit_admin').addEventListener('click', editItem)
-function editItem(){
-    function editItem(){
-        // this.id = object.id //gets the id
-        // this.title = document.querySelector('.title').value, //gets the new value from edit modal
-        // this.brand = document.querySelector('.brand').value,
-        // this.description = document.querySelector('.description').value
-        // this.price = document.querySelector('.price').value
-        // this.image = document.querySelector('.image').value
-    
-    
-        // list[index] = Object.assign({},this) //assigning
-        // functiondisplay()
-        alert('it workes')
-    }
+function editItem(item){
+    this.id = item.id
+    this.brand = document.querySelector(`#brand-${item.id}`).value
+    this.src = document.querySelector(`#imgSrc-${item.id}`).value
+    this.description = document.querySelector(`#description-${item.id}`).value
+    this.price = document.querySelector(`#price-${item.id}`).value
+     let index = products.findIndex( f=>{
+    return f.id === item.id
+    })
+  console.log(item, index);
+  products[index] = Object.assign({}, this)
+  localStorage.setItem('prodList',JSON.stringify(products))
+  displayProd()
 }
 
 
@@ -112,4 +111,7 @@ function editItem(){
 
 // "click"  --> action that must take place
  
-// greet ---> function that must take action
+// greet ---> function that must take 
+
+
+ 
