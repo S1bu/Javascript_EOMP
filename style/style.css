@@ -34,8 +34,8 @@ body{
  .td{
     /* padding: 10px; */
     border-bottom: var(---border);
-    animation:backInRight; 
-    animation-duration: 3s; 
+    /* animation:backInRight; 
+    animation-duration: 3s;  */
  }
 
  .td button {
@@ -148,8 +148,8 @@ form .btn-danger{
     font-size: 80px;
     position: absolute;
     top: 50%;
-    animation:backInDown; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s; /* don't forget to set a duration! */
+    /* animation:backInDown; /* referring directly to the animation's @keyframe declaration */
+    /* animation-duration: 3s; don't forget to set a duration!  */
 }
 
 .brand{
@@ -204,8 +204,8 @@ form .btn-danger{
 }
  .col{
     margin: 3px;
-    animation:backInRight; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s; /* don't forget to set a duration! */
+    /* animation:backInRight; referring directly to the animation's @keyframe declaration */
+    /* animation-duration: 3s; don't forget to set a duration! */
  }
  
 .add_TO_CART{
@@ -248,7 +248,15 @@ margin: 4px;
 border-radius: 2px;
 }
 
+#delete_admin{
+    margin: 2px;
+    width: 70px;
+}
 
+#edit_admin{
+    margin: 2px;
+    width: 70px;
+}
 
 /***************************************************/
 /****************Responsiveness*******************/
@@ -318,3 +326,5 @@ border-radius: 2px;
             height: 100%;
             }
         }
+
+     

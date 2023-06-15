@@ -104,8 +104,8 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
           <th class="td">Price</th>
           <th class="td">Description</th>
           <th class="td">Image</th>
-          <th class="td">edit</i></th> 
-          <th class="td">delete</th> 
+          <th class="td"> <button id='edit_admin' type="buttton" class="btn btn-success">edit</button></th> 
+          <th class="td"><button id="delete_admin"  type="button" class="btn btn-danger">delete</button></th> 
           </tr>
           <tbody class="table_row">
           </tbody>
@@ -133,7 +133,7 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" style="font-weight: 900;" class="cancel" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn"style="background-color:#3F3D3D;font-weight:900;color:white" onclick="addProduct()">Save changes</button>
+            <button type="button" class="btn"style="background-color:#3F3D3D;font-weight:900;color:white"  id="add_item">add item</button>
           </div>
         </div>
       </div>

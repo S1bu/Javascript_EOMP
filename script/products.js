@@ -55,8 +55,10 @@ aspect-ratio: 3/2;">
 </div>
   ` 
 });
- 
-// cALCULATION OF TOTAL PRICE
+
+//---------------------------------------
+//FUNCTION FOR cALCULATION OF TOTAL PRICE
+//---------------------------------------
 function total(){
  
   let idAdd = parseInt(prompt('Please confirm'));  //input id
@@ -72,13 +74,13 @@ function total(){
 
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
+}
+//----------------------------------------------- 
+
  
- 
-//-----------------------------------------------
-//-----------------------------------------------
-//-----------------------------------------------
- 
-} 
+//---------------------------------------
+//FUNCTION FOR DISPLAYING THE TOTAL VALUE
+//---------------------------------------
 function displayTotal() {
   let sum = 0;
   //the calculation
@@ -93,6 +95,7 @@ function displayTotal() {
 }
 document.onload = displayTotal();
 
+let clear_list = document.querySelector('#clear_list').addEventListener('click',clearlIST)
 // CLEAR THE TOTAL LIST
 function clearlIST(){
 let totalList=[]
