@@ -1,5 +1,6 @@
 // let list =[]; //our list
 let title = document.querySelector('.title'); //get title
+let brand = document.querySelector('.brand'); //get title
 let price = document.querySelector('.price'); //get price
 let description = document.querySelector('.description'); //get description
 let image = document.querySelector('.image'); //get image
@@ -12,7 +13,9 @@ function display(){
     JSON.parse(localStorage.getItem('id'))
      list.forEach(display => {
         output.innerHTML+=`
+         
                 <td class="td" >${display.id}</td>
+                <td class="td" class="product" >${display.brand}</td>
                 <td class="td">${display.title}</td>
                 <td class="td">R ${display.price}</td>
                 <td class="td">${display.description}</td>
@@ -20,6 +23,7 @@ function display(){
                 aspect-ratio: 3/2;"></td>
                 <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget" onclick="edit()">edit</button></td> <!---edit product-->
                 <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
+       
         `
      });
    
@@ -36,6 +40,7 @@ function addProduct(){
     list.push( {
         id:id++,
         title:title.value,
+        brand:brand.value,
         price:price.value,
         description:description.value,
         image:image.value
@@ -65,9 +70,14 @@ location.reload(); //reloads the page
 
 
 function editItem(object){
-    this.id=object.id //gets the id
-    this.name=document.querySelector('#edit').value, //gets the new value from edit modal
-    array[index]=Object.assign({},this) //assigning
+    this.id = object.id //gets the id
+    this.title = document.querySelector('.title').value, //gets the new value from edit modal
+    this.brand = document.querySelector('.brand').value,
+    this.description = document.querySelector('.description').value
+    this.price = document.querySelector('.price').value
+    this.image = document.querySelector('.image').value
+
+
+    list[index] = Object.assign({},this) //assigning
     functiondisplay()
 }
-//in edit button of modal onclick='new editItem ()'

@@ -4,7 +4,7 @@ let totalOutcome = document.querySelector('.total') //targeting total amount out
 let cartStuff = document.querySelector('.cart-item') //targeting cart output
 let list = JSON.parse(localStorage.getItem('id')) ? JSON.parse(localStorage.getItem('id')) : [];
 let totalList = JSON.parse(localStorage.getItem('calculation')) ? JSON.parse(localStorage.getItem('calculation')) : [];
-let cartList = [];
+let cartList = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : [];;
 // list of default products
 let displayProducts =[
     {
@@ -73,47 +73,26 @@ function total(){
   // console.log(sum);
   localStorage.setItem('calculation',JSON.stringify(totalList) ) //send to storage
  
+ 
+//-----------------------------------------------
+//-----------------------------------------------
+//-----------------------------------------------
+ 
+} 
+function displayTotal() {
   let sum = 0;
   //the calculation
   totalList.forEach(n=> sum += n)
 //output
+ 
   totalOutcome.innerHTML=`
   Total = ${sum}
   `
+  
   console.log(totalList);
-//-----------------------------------------------
-//-----------------------------------------------
-//-----------------------------------------------
- 
-  //-----display cart
-  cartList.push(newTarget)  //pushing the cart details cartList
-  localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
-  console.log(cartList)
-  cartList.forEach(element => {
-    cartStuff.innerHTML+=`
-    <div class="container text-center" class="checkout">
-  <div class="row align-items-center">
-  <div class="col">
-  ${element.id}
-</div>
-    <div class="col">
-    <img src=" ${element.image}" alt="" width="60px" height="60px">
-    </div>
-    <div class="col">
-       ${element.description}
-    </div>
-    <div class="col">
-    ${element.price}
-    </div>
-    
-    </div>
-  </div>
-  </div>
-    `
-  });
+}
+document.onload = displayTotal();
 
-} 
- 
 // CLEAR THE TOTAL LIST
 function clearlIST(){
 let totalList=[]
@@ -131,4 +110,24 @@ let cartList =[]
 //   localStorage.setItem('cart',JSON.stringify(cartList)) //send to storage
 // //  cart-item
 // console.log(cartList);
+// }
+
+//FILTER PRODUCTS
+// document.querySelector('.input').addEventListener('input',filterList);
+
+// function filterList() {
+//     const searchInput = document.querySelector('.input'); //takes the input     <------input
+//     const filter = searchInput.value.toLowerCase();  //change the input value to lowercase  ---((process))----
+//     const products_output2  = document.querySelectorAll('.product'); //targets the output class ------>ouput
+
+//    products_output2.forEach((item) =>{
+//         let text = item.textContent;
+
+//         if(text.toLowerCase().includes(filter.toLowerCase())){
+//             item.style.display = '';
+//         }
+//         else{
+//             item.style.display = 'none';
+//         }
+//     });
 // }

@@ -98,6 +98,7 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
         <!-- what appears in the modal as a form -->
         <div class="modal-body">
           <p><b>Title :</b><input type="text" class="title" placeholder="Product name"></p>
+          <p><b>Brand :</b><input type="text" class="brand" placeholder="Brand name"></p>
           <p><b>Price :</b><input type="text" class="price" placeholder="R 0,00"></p>
           <p><b>Description :</b><input type="text" class="description" placeholder="Describe condition..."></p>
           <p><b>Image :</b><input type="text" class="image" placeholder="URL('')"></p>
@@ -116,6 +117,7 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
         <tr>
         <th class="td">id</th>
         <th class="td">Product</th>
+        <th class="td">Brand</th>
         <th class="td">Price</th>
         <th class="td">Description</th>
         <th class="td">Image</th>
@@ -128,7 +130,7 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
       </table>
   </div>
   <!-- hidden form edit stuff-->
-<!-- Modal -->
+<!-- Modal EDIT-->
 <div class="modal fade" id="editTarget" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -138,12 +140,18 @@ color: var(---text_color); margin: 10px;" data-bs-toggle="modal" data-bs-target=
       </div>
       <div class="modal-body">
         <!-- edit title -->
+       <p>Title : </p> 
       <input type="text" class="title">
-        <!-- edit title -->
-        <input type="text" class="Description">
-          <!-- edit title -->
+        <!-- edit description -->
+        <p>Brand: </p> 
+        <input type="text" class="brand">
+        <p>Description: </p> 
+        <input type="text" class="description">
+          <!-- edit price -->
+          <p>Price : </p> 
       <input type="text" class="price">
-        <!-- edit title -->
+        <!-- edit image -->
+        <p>Image: </p> 
         <input type="text" class="image">
       </div>
       <div class="modal-footer">
