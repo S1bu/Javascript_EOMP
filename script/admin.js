@@ -1,14 +1,18 @@
-// let list =[]; //our list
+// DOM  FOR INPUTS AND OUTPUTS
 let title = document.querySelector('.title'); //get title
 let brand = document.querySelector('.brand'); //get title
 let price = document.querySelector('.price'); //get price
 let description = document.querySelector('.description'); //get description
 let image = document.querySelector('.image'); //get image
 let output = document.querySelector('.table_row') // targettting the table_row clss
-let list = JSON.parse(localStorage.getItem('id')) ? JSON.parse(localStorage.getItem('id')) : [];
-let id = list[list.length-1] ? list[list.length-1].id +1 : 1;
+let list = JSON.parse(localStorage.getItem('id')) ? JSON.parse(localStorage.getItem('id')) : []; //get items from storage 
+let id = list[list.length-1] ? list[list.length-1].id +1 : 1; //give id numbers to the products i add
 
-// DISPLAY PRODUCTS
+ 
+
+//------------------------------
+//FUNCTION FOR DISPLAY PRODUCTS
+//-----------------------------
 function display(){
     JSON.parse(localStorage.getItem('id'))
      list.forEach(display => {
@@ -21,23 +25,21 @@ function display(){
                 <td class="td">${display.description}</td>
                 <td class="td"><img src="${display.image}"style=" object-fit:contain;
                 aspect-ratio: 3/2;"></td>
-                <td class="td"><button  data-bs-toggle="modal" data-bs-target="#editTarget" onclick="edit()">edit</button></td> <!---edit product-->
-                <td class="td"><button onclick="removeBtn()">del</button></td> <!---delete product-->
                 </tr>
         `
      });
    
 }
+//----------------------------------
+
  document.onload = display(); 
-
- 
-
-// ADD PRODUCTS
-function addProduct(){
-    //prevent page default
-    event.preventDefault(); 
-    // push this details as an object into the array called list
-    list.push( {
+//--------------------------
+//FUNCTION FOR ADD ITEM
+//-------------------------
+ let add_item =document.querySelector('#add_item').addEventListener("click" , addProduct)
+function addProduct(){  
+    event.preventDefault();   //prevent page default
+    list.push( {      // push this details as an object into the array called list
         id:id++,
         title:title.value,
         brand:brand.value,
@@ -45,16 +47,18 @@ function addProduct(){
         description:description.value,
         image:image.value
     })
-    // id++;
-// store list on local storage 
-    localStorage.setItem('id',JSON.stringify(list) )
- 
-location.reload(); //reloads the page
+    localStorage.setItem('id',JSON.stringify(list) ) // store list on local storage 
+    location.reload(); //reloads the page
 }
+//------------------------------
 
 
-//REMOVE PRODUCT
-function removeBtn() {
+//-------------------------
+//FUNCTION FOR REMOVE ITEM
+//-------------------------
+
+let delete_admin_product = document.querySelector("#delete_admin").addEventListener("click", removeBtn )
+function removeBtn() { //REMOVE PRODUCT FUNCITON
    let idDel = parseInt(prompt('Please confirm by inputing the id number of the product u wish to delete'));  //input id
  let target = list.find(function(locate){
     return locate.id == idDel;
@@ -68,16 +72,33 @@ localStorage.setItem('id',JSON.stringify(list) ) //send to storage
 location.reload(); //reloads the page
 }
 
+//-------------------------
+//FUNCTION EDIT ITEMS
+//-------------------------
 
-function editItem(object){
-    this.id = object.id //gets the id
-    this.title = document.querySelector('.title').value, //gets the new value from edit modal
-    this.brand = document.querySelector('.brand').value,
-    this.description = document.querySelector('.description').value
-    this.price = document.querySelector('.price').value
-    this.image = document.querySelector('.image').value
-
-
-    list[index] = Object.assign({},this) //assigning
-    functiondisplay()
+let edit_admin = document.querySelector('#edit_admin').addEventListener('click', editItem)
+function editItem(){
+    function editItem(){
+        // this.id = object.id //gets the id
+        // this.title = document.querySelector('.title').value, //gets the new value from edit modal
+        // this.brand = document.querySelector('.brand').value,
+        // this.description = document.querySelector('.description').value
+        // this.price = document.querySelector('.price').value
+        // this.image = document.querySelector('.image').value
+    
+    
+        // list[index] = Object.assign({},this) //assigning
+        // functiondisplay()
+        alert('it workes')
+    }
 }
+
+
+ 
+// btn.addEventListener("click", greet);
+
+// btn ---> target that must be clicked
+
+// "click"  --> action that must take place
+ 
+// greet ---> function that must take action
