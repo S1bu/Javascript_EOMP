@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap')
 
 *{
     padding: 0;
@@ -21,25 +21,34 @@ body{
 /***************************************************/
 /****************TABLE STYLING*******************/
 /***************************************************/
-table{
+
+ table{
     width: 100%;
-    text-align: center;
-} 
- 
+    margin-bottom: 100px;
+ }
 .table_row{
     border-bottom: var(---border);
+    width: 100%;
 }
 
  .td{
-    padding: 10px;
+    /* padding: 10px; */
     border-bottom: var(---border);
-    animation:backInRight; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s; /* don't forget to set a duration! */
+    animation:backInRight; 
+    animation-duration: 3s; 
+ }
+
+ .td button {
+    width: 100% ;
  }
 .td img{
     width: 100px;
     height: 100px;
 }
+/* 
+table {
+    border: 1px solid black;
+} */
 
 /*****************************************/
 /****************nav bar*****************/
@@ -159,6 +168,7 @@ form .btn-danger{
 
 #product{
     background-color: var(---alternative_color);
+    margin-bottom: 50px;
 }
 
 
@@ -213,7 +223,8 @@ footer{
     color: var(---text_color);
     background-color: var(---main_color);
     padding: 20px;
-    position: relative;
+    position: fixed;
+    width: 100%;
     bottom: 0;
 }
 
@@ -238,60 +249,71 @@ border-radius: 2px;
 /***************************************************/
 /****************Responsiveness*******************/
 /***************************************************/
-
-/* SMALL PHONE */
-/* Mobile */
-@media only screen and (max-width: 600px){
-   /********************************/
-   /**********BANNER****************/
-   /**********************************/
-    .banner{
-        background-size: contain;
-        height: 20vh;
-        background-repeat: no-repeat;
-    }
-    .banner h1{
-        padding: 40px;
-        font-size: 30px;
-        position: relative;
-    }
-    /**********************************/
-    /************PRODUCTS************/
-    /**********************************/
-    .container_output{
-        grid-template-columns: auto auto;
-      }
-      .container_output2{
-          grid-template-columns: auto auto;
-        }
+  /* SMALL PHONE */
+/* Mobile  300px*/
+@media only screen and (max-width: 300px){
+    /**********BANNER****************/
+     .banner{
+ background-image: none;
+ background-color: #3F3D3D;
+         background-size: contain;
+         /* visibility: hidden; */
+          height: 30vh;
+         background-repeat: no-repeat; */
+     }
+     .banner h1{
+         padding: 40px;
+         font-size: 30px;
+         position: relative;
+     }
+  
+     /************PRODUCTS************/
+    
+     .container_output{
+         grid-template-columns: auto;
+       }
+       .container_output2{
+           grid-template-columns: auto;
 }
-/*NORMAL PHONE*/
-@media only screen and (max-width: 600px){
+ont-size: 5px;
+}
+
+
+/*NORMAL PHONE  700px*/
+@media only screen and (max-width: 700px){
     /********************************/
     /**********BANNER****************/
     /**********************************/
      .banner{
-         background-size: contain;
-         height: 15vh;
-         background-repeat: no-repeat;
+   
+         background-size: cover;
+      
      }
-     .banner h1{
-      visibility: hidden;
-     }
+    
      /**********************************/
      /************PRODUCTS************/
      /**********************************/
      .container_output{
-         grid-template-columns: auto auto;
+         grid-template-columns: auto;
+      
        }
        .container_output2{
-           grid-template-columns: auto auto;
+           grid-template-columns: auto;
+      
          }
- }
 
-
-
-  .input{
-    width: 100%;
-    padding: 10px;
+         tr {
+             width: fit-content;
+         }
+         .td{
+             font-size: 10px;
   }
+
+  .td img{
+    width: 100%;
+    height: 100%;
+}
+        }
+
+
+
